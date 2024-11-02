@@ -1,0 +1,153 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			// uni-ui 规则如下配置
+			//"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+			"^uni-((?!(shadow-root|icons)).*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+		}
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/splash/splash",
+			"style": {
+				"navigationBarTitleText": "闪屏页"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"enablePullDownRefresh": true //允许页面下拉刷新
+			}
+		},
+		{
+			"path": "pages/musicList/index",
+			"style": {
+				"navigationBarTitleText": "音乐列表",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/playerPage/index",
+			"style": {
+				"navigationBarTitleText": "播放页面",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/albums/index",
+			"style": {
+				"navigationBarTitleText": "专辑列表"
+			}
+		},
+		{
+			"path": "pages/userSetting/index",
+			"style": {
+				"navigationBarTitleText": "用户设置"
+			}
+		},
+		{
+			"path": "pages/userSetting/CameraH5",
+			"style": {
+				"navigationBarTitleText": "头像拍照H5"
+			}
+		},
+		{
+			"path": "pages/playerList/index",
+			"style": {
+				"navigationBarTitleText": "播放列表",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/NoAuth/Login/index",
+			"style": {
+				"navigationBarTitleText": "登录页"
+			}
+		},
+		{
+			"path": "pages/NoAuth/Register/index",
+			"style": {
+				"navigationBarTitleText": "注册页"
+			}
+		},
+		{
+			"path": "pages/userFace/index",
+			"style": {
+				"navigationBarTitleText": "选择头像"
+			}
+		},
+		{
+			"path": "pages/albums/albumInfo",
+			"style": {
+				"navigationBarTitleText": "专辑信息"
+			}
+		},
+		{
+			"path": "pages/albums/albumEdit",
+			"style": {
+				"navigationBarTitleText": "编辑专辑"
+			}
+		},
+		{
+			"path": "pages/ImportSong/ImportSongH5",
+			"style": {
+				"navigationBarTitleText": "导入歌曲H5"
+			}
+		},
+		{
+			"path": "pages/ImportSong/ImportAndroid",
+			"style": {
+				"navigationBarTitleText": "导入歌曲Android"
+			}
+		},
+		{
+			"path": "pages/share/ShareMusic",
+			"style": {
+				"navigationBarTitleText": "分享歌曲"
+			}
+		},
+		{
+			"path": "pages/userProfile/index",
+			"style": {
+				"navigationBarTitleText": "用户信息"
+			}
+		},
+		{
+			"path": "pages/about/index",
+			"style": {
+				"navigationBarTitleText": "关于程序"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "yammusicplayer",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle": "custom"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#086d5b",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/index/index"
+			},
+			{
+				"pagePath": "pages/musicList/index"
+			},
+			{
+				"pagePath": "pages/playerPage/index"
+			},
+			{
+				"pagePath": "pages/albums/index"
+			},
+			{
+				"pagePath": "pages/userSetting/index"
+			}
+		]
+	}
+}

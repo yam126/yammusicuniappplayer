@@ -1,0 +1,25 @@
+{
+	"name": "Permission",
+	"id": "neoceansoft-permission",
+	"version": "1.1",
+	"description": "Permission",
+	"_dp_type": "nativeplugin",
+	"_dp_nativeplugin": {
+		"android": {
+			"plugins": [{
+				"type": "module",
+				"name": "neoceansoft-permission",
+				"class": "com.android.mylibrary.PermissionModule"
+			}],
+			"abis": [
+				"armeabi-v7a",
+				"arm64-v8a",
+				"x86"
+			],
+			"dependencies": [
+				"com.github.getActivity:XXPermissions:5.2"
+			],
+			"integrateType": "aar"
+		}
+	}
+}
