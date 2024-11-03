@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\PublishProject\YamMusicPlayerHttps</_PublishTargetUrl>
+    <History>True|2024-11-01T14:39:52.2435699Z;True|2024-11-01T00:17:46.9893198+08:00;True|2024-10-25T21:36:26.9797700+08:00;True|2024-10-13T22:35:06.8545827+08:00;True|2024-10-03T18:22:14.8275080+08:00;True|2024-10-02T14:45:15.8999070+08:00;True|2024-10-02T14:44:46.5328676+08:00;True|2024-10-02T14:34:50.0814107+08:00;True|2024-10-02T14:09:40.2059381+08:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

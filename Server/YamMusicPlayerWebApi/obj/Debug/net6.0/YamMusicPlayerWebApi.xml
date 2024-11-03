@@ -1,0 +1,2049 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YamMusicPlayerWebApi</name>
+    </assembly>
+    <members>
+        <member name="T:YamMusicPlayerWebApi.Controllers.AlbumController">
+            <summary>
+            专辑信息
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.AlbumController.QueryRecentlyListenedPage(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            查看常听专辑页
+            </summary>
+            <param name="UserId">用户编号</param>
+            <param name="SortField">排序字段</param>
+            <param name="SortMethod">排序方法</param>
+            <param name="PageSize">每页记录数</param>
+            <param name="CurPage">当前页</param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.AlbumController.QueryPage(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            分页查询歌曲
+            </summary>
+            <param name="SqlWhere">查询条件</param>
+            <param name="CurPage">当前页</param>
+            <param name="PageSize">每页记录数</param>
+            <param name="SortField">排序字段</param>
+            <param name="SortMethod">排序方法[DESC|ASC]</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.AlbumController.GetAlbumInfo(System.String)">
+            <summary>
+            获取专辑信息
+            </summary>
+            <param name="albumId">专辑信息</param>
+            <returns>专辑信息</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.AlbumController.EditAlbumAsync">
+            <summary>
+            编辑专辑
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.AlbumController.AddViewCount(System.String)">
+            <summary>
+            添加专辑浏览次数
+            </summary>
+            <param name="albumId">专辑编号</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.AlbumController.ClearAlbumSong(System.String)">
+            <summary>
+            清空专辑里的歌曲
+            </summary>
+            <param name="albumId">专辑编号</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.AlbumController.DeleteAlbum(System.String)">
+            <summary>
+            删除专辑
+            </summary>
+            <param name="albumId">专辑编号</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Controllers.FileController">
+            <summary>
+            文件接口
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.FileController.GetUserFaces">
+            <summary>
+            获取所有用户头像
+            </summary>
+            <returns>头像URL地址</returns>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Controllers.FriendsController">
+            <summary>
+            用户好友信息
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.FriendsController.QueryPage(System.String,System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            分页查询
+            </summary>
+            <param name="SqlWhere">查询条件</param>
+            <param name="CurPage">当前页</param>
+            <param name="PageSize">每页记录数</param>
+            <param name="SortField">排序字段</param>
+            <param name="SortMethod">排序方法[DESC|ASC]</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.FriendsController.DeleteFriend(System.String,System.String)">
+            <summary>
+            删除好友
+            </summary>
+            <param name="UserId">用户编号</param>
+            <param name="FriendId">好友编号</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.FriendsController.AddFriend(YamMusicPlayerWebApi.Model.AddFriendArgument)">
+            <summary>
+            添加好友
+            </summary>
+            <param name="args">参数</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.FriendsController.ConvertApiResult(DataAccess.Model.vw_friends,Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Api返回值转换
+            </summary>
+            <param name="args">参数值</param>
+            <param name="Request">Http请求对象</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.HomeController.GetFocusImage(System.String,System.Int32)">
+            <summary>
+            获得焦点图
+            </summary>
+            <param name="userId">用户编号</param>
+            <param name="limit">获取几条数据(默认5条)</param>
+            <returns>焦点图数据</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.HomeController.GetRecentlyListened(System.String,System.Int32)">
+            <summary>
+            获取最近收听
+            </summary>
+            <param name="userId">用户编号</param>
+            <param name="limit">获取几条数据(默认5条)</param>
+            <returns>焦点图数据</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.HomeController.GetRecentlyListendAlbum(System.String,System.Int32)">
+            <summary>
+            获取最近收听
+            </summary>
+            <param name="userId">用户编号</param>
+            <param name="limit">获取几条数据(默认5条)</param>
+            <returns>焦点图数据</returns>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Controllers.InsertTestController">
+            <summary>
+            测试数据控制器
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.InsertTestController.InsertMP3Files">
+            <summary>
+            测试MP3文件
+            </summary>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.InsertTestController.UpadteAlbumSongData">
+            <summary>
+            更新专辑歌曲数量
+            </summary>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.InsertTestController.InsertSongCommentData">
+            <summary>
+            添加歌曲评论测试数据
+            </summary>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.InsertTestController.InsertRecentlyListened">
+            <summary>
+            添加最近收听数据
+            </summary>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.InsertTestController.InsertSharingHistory">
+            <summary>
+            添加分享测试记录
+            </summary>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.InsertTestController.InsertFriendsData">
+            <summary>
+            添加测试用户好友数据
+            </summary>
+            <returns>返回值</returns>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Controllers.NoAuthController">
+            <summary>
+            登陆
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.NoAuthController.Login(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            登陆Api
+            </summary>
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+            <param name="deviceId">设备ID</param>
+            <param name="deviceType">设备类型(1-PC 2-IPhone 3-Android)</param>
+            <returns>返回值(token)</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.NoAuthController.CheckLogin(YamMusicPlayerWebApi.Model.CheckLoginArgument)">
+            <summary>
+            验证登陆状态
+            </summary>
+            <param name="argument">登陆状态验证参数</param>
+            <returns>是否验证通过</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.NoAuthController.Register(YamMusicPlayerWebApi.Model.RegistArgument)">
+            <summary>
+            注册方法
+            </summary>
+            <param name="argument">登陆方法参数</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.NoAuthController.VerifyCode(System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            验证码
+            </summary>
+            <param name="CodeLength">验证码生成多少个字符</param>
+            <param name="refreshNum">刷新随机数</param>
+            <param name="Width">宽度</param>
+            <param name="Height">高度</param>
+            <param name="FontSize">字体大小</param>
+            <returns>验证码图片</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.NoAuthController.GetRequestHost(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            获得请求的Host
+            </summary>
+            <param name="Request">请求对象</param>
+            <returns>请求的host地址</returns>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Controllers.PlayPageController">
+            <summary>
+            播放页面控制层
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.PlayPageController.GetPlayerData(System.String,System.String,System.String)">
+            <summary>
+            获取播放数据
+            </summary>
+            <param name="albumId">专辑编号</param>
+            <param name="songId">歌曲编号</param>
+            <returns>播放页数据</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.PlayPageController.RecordRecentlyListend(System.String,System.String)">
+            <summary>
+            记录常听专辑
+            </summary>
+            <param name="UserId">歌曲编号</param>
+            <param name="SongId">歌曲编号</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.PlayPageController.ConvertApiReult(YamMusicPlayerWebApi.Model.PlayData@,System.String,Microsoft.AspNetCore.Http.HttpRequest,DataAccess.Model.albuminfo,System.Collections.Generic.List{DataAccess.Model.songinfo},DataAccess.Model.userinfo,DataAccess.Model.songinfo)">
+            <summary>
+            转换播放页返回值
+            </summary>
+            <param name="resultData">返回数据</param>
+            <param name="host">host</param>
+            <param name="Request">request</param>
+            <param name="albuminfo">专辑信息</param>
+            <param name="albumSongList">专辑歌曲列表</param>
+            <param name="creater">创建者</param>
+            <param name="songinfo">歌曲信息</param>
+        </member>
+        <member name="F:YamMusicPlayerWebApi.Controllers.QRCodeController.m_webHostEnvironment">
+            <summary>
+            获取网站路径
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.QRCodeController.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            重载构造函数
+            </summary>
+            <param name="webHostEnvironment">网站路径</param>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.QRCodeController.GenerateUserQRCode(System.String,System.Int32,System.Int32)">
+            <summary>
+            生成用户二维码
+            </summary>
+            <param name="userId">用户编号</param>
+            <param name="width">宽度</param>
+            <param name="height">高度</param>
+            <returns>二维码图片</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.QRCodeController.GenerateShareMusicQRCode(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            生成分享二维码
+            </summary>
+            <param name="songId">歌曲编号</param>
+            <param name="userId">用户编号</param>
+            <param name="width">宽度</param>
+            <param name="height">高度</param>
+            <returns>二维码图片</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.QRCodeController.GenerateShareAlbumQRCode(System.String,System.Int32,System.Int32)">
+            <summary>
+            生成专辑分享二维码
+            </summary>
+            <param name="albumId">专辑编号</param>
+            <param name="width">宽度</param>
+            <param name="height">高度</param>
+            <returns>二维码图片</returns>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Controllers.RecentlyListenedController">
+            <summary>
+            常听信息
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.RecentlyListenedController.QueryPage(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            分页查询
+            </summary>
+            <param name="UserId">用户编号</param>
+            <param name="CurPage">当前页</param>
+            <param name="PageSize">每页记录数</param>
+            <param name="SortField">排序字段</param>
+            <param name="SortMethod">排序方法[DESC|ASC]</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.RecentlyListenedController.ConvertApi(DataAccess.Model.vw_recentlylistened,Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            参数转换
+            </summary>
+            <param name="args">参数</param>
+            <param name="Request">Http请求</param>
+            <returns>转换后的参数</returns>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Controllers.SharingHistoryController">
+            <summary>
+            分享历史
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.SharingHistoryController.QueryPage(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            分页查询
+            </summary>
+            <param name="UserId">用户编号</param>
+            <param name="CurPage">当前页</param>
+            <param name="PageSize">每页记录数</param>
+            <param name="SortField">排序字段</param>
+            <param name="SortMethod">排序方法[DESC|ASC]</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.SharingHistoryController.AddSharingHistory(YamMusicPlayerWebApi.Model.AddSharingHistoryArgument)">
+            <summary>
+            添加分享历史
+            </summary>
+            <param name="args">分享历史参数</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.SharingHistoryController.AddShareAlbum(System.String)">
+            <summary>
+            添加专辑分享
+            </summary>
+            <param name="albumId">专辑编号</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.SharingHistoryController.ConvertApi(DataAccess.Model.vw_sharinghistory,Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            参数转换
+            </summary>
+            <param name="args">参数</param>
+            <param name="Request">Http请求</param>
+            <returns>转换后的参数</returns>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Controllers.SongCommentController">
+            <summary>
+            歌曲评论
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.SongCommentController.QueryPage(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            分页查询歌曲
+            </summary>
+            <param name="SongId">歌曲编号</param>
+            <param name="CurPage">当前页</param>
+            <param name="PageSize">每页记录数</param>
+            <param name="SortField">排序字段</param>
+            <param name="SortMethod">排序方法[DESC|ASC]</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.SongCommentController.LeaveComment(YamMusicPlayerWebApi.Model.LeaveCommentArgument)">
+            <summary>
+            发布评论
+            </summary>
+            <param name="args">评论参数</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.SongCommentController.ConvertApi(DataAccess.Model.vw_songcomment,Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            转换Api返回参数
+            </summary>
+            <param name="args">数据库参数</param>
+            <returns>转换后的值</returns>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Controllers.SongInfoController">
+            <summary>
+            歌曲信息控制器
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.SongInfoController.QueryPage(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            分页查询歌曲
+            </summary>
+            <param name="SqlWhere">查询条件</param>
+            <param name="CurPage">当前页</param>
+            <param name="PageSize">每页记录数</param>
+            <param name="SortField">排序字段</param>
+            <param name="SortMethod">排序方法[DESC|ASC]</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.SongInfoController.GetSongInfoByAlbumLimit(System.Nullable{System.Int64},System.Int32)">
+            <summary>
+            获得专辑指定数量的歌曲
+            </summary>
+            <param name="albumId">专辑编号</param>
+            <param name="limit">限制条数</param>
+            <returns>专辑的歌曲信息</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.SongInfoController.UploadSongFile(System.String,System.String)">
+            <summary>
+            上传歌曲文件
+            </summary>
+            <param name="userid">用户编号</param>
+            <param name="albumId">专辑编号</param>
+            <param name="fileIndex">当前文件序号</param>
+            <param name="fileCount">文件总数量</param>
+            <returns>Api返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.SongInfoController.ChangeSongAlbum(System.String,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            更改歌曲的专辑信息
+            </summary>
+            <param name="albumId">专辑编号</param>
+            <param name="songId">歌曲列表</param>
+            <param name="userid">用户编号</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.SongInfoController.DeleteSong(System.String)">
+            <summary>
+            删除歌曲
+            </summary>
+            <param name="songId">歌曲编号</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.UserController.GetUserInfoById(System.String)">
+            <summary>
+            根据用户编号查询用户信息
+            </summary>
+            <param name="UserId">用户编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.UserController.ChangeUserFace(YamMusicPlayerWebApi.Model.ChangeUserFaceArgument)">
+            <summary>
+            更换用户头像
+            </summary>
+            <param name="args">更换参数</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.UserController.ChangeUserFaceBase(System.String,System.String)">
+            <summary>
+            切换头像H5
+            </summary>
+            <param name="UserId">用户编号</param>
+            <param name="base64Image">base64图片字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.UserController.EditPassword(YamMusicPlayerWebApi.Model.EditPasswordArgument)">
+            <summary>
+            修改密码 
+            </summary>
+            <param name="args">密码修改参数</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.UserController.EditSignature(YamMusicPlayerWebApi.Model.EditSignatureArgument)">
+            <summary>
+            编辑签名
+            </summary>
+            <param name="args">参数</param>
+            <returns>是否成功返回值</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Controllers.UserController.UploadUserFace">
+            <summary>
+            上传用户头像
+            </summary>
+            <param name="UserId">用户编号</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.JWTModel.TokenManagement">
+            <summary>
+            token配置类
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.JWTModel.TokenManagement.Secret">
+            <summary>
+            密钥
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.JWTModel.TokenManagement.Issuer">
+            <summary>
+            发行者
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.JWTModel.TokenManagement.Audience">
+            <summary>
+            受众
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.JWTModel.TokenManagement.AccessExpiration">
+            <summary>
+            访问过期时间
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.JWTModel.TokenManagement.RefreshExpiration">
+            <summary>
+            刷新过期时间
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Library.AppSetting">
+            <summary>
+            应用程序配置
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.AppSetting.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.AppSetting.GetInstance">
+            <summary>
+            单例模式避免重复创建
+            </summary>
+            <returns>返回设置object</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.AppSetting.GetConfigSection(System.String)">
+            <summary>
+            获得配置节点的配置集合
+            </summary>
+            <param name="keyName">配置节点名称</param>
+            <returns>配置集合</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.AppSetting.GetAppSetting(System.String)">
+            <summary>
+            获取指定App设置
+            </summary>
+            <param name="keyName">配置节点名称</param>
+            <returns>设置内容</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.AppSetting.ConConnectionStrings(System.String)">
+            <summary>
+            获得连接字符串
+            </summary>
+            <param name="key">数据库连接字符串名称</param>
+            <returns>数据库连接字符串</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.AppSetting.GetConfig(System.String)">
+            <summary>
+            获取配置
+            </summary>
+            <param name="name">配置节点名称</param>
+            <returns>配置节点内容</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.AppSetting.ReplaceString(System.String)">
+            <summary>
+              替换部分字符串
+            </summary>
+            <param name="sPassed">需要替换的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.AppSetting.GetContentTypes(System.String@)">
+            <summary>
+            获得所有contentTypes
+            </summary>
+            <param name="message">错误消息</param>
+            <returns>所有获得所有contentTypes</returns>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Library.User">
+            <summary>
+            token生成参数类
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Library.User.UserId">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Library.User.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Library.User.DeviceId">
+            <summary>
+            设备编号
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Library.MemoryCacheHelper">
+            <summary>
+            缓存帮助类
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.MemoryCacheHelper.Exists(System.String)">
+            <summary>
+            验证缓存项是否存在
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.MemoryCacheHelper.Set(System.String,System.Object,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            添加缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <param name="expiresSliding">滑动过期时长（如果在过期时间内有操作，则以当前时间点延长过期时间）</param>
+            <param name="expiressAbsoulte">绝对过期时长</param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.MemoryCacheHelper.Set(System.String,System.Object,System.TimeSpan,System.Boolean)">
+            <summary>
+            添加缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <param name="value">缓存Value</param>
+            <param name="expiresIn">缓存时长</param>
+            <param name="isSliding">是否滑动过期（如果在过期时间内有操作，则以当前时间点延长过期时间）</param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.MemoryCacheHelper.Remove(System.String)">
+            <summary>
+            删除缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.MemoryCacheHelper.RemoveAll(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            批量删除缓存
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.MemoryCacheHelper.Get``1(System.String)">
+            <summary>
+            获取缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.MemoryCacheHelper.Get(System.String)">
+            <summary>
+            获取缓存
+            </summary>
+            <param name="key">缓存Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.MemoryCacheHelper.GetAll(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取缓存集合
+            </summary>
+            <param name="keys">缓存Key集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.MemoryCacheHelper.RemoveCacheAll">
+            <summary>
+            删除所有缓存
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.MemoryCacheHelper.RemoveCacheRegex(System.String)">
+            <summary>
+            删除匹配到的缓存
+            </summary>
+            <param name="pattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.MemoryCacheHelper.SearchCacheRegex(System.String)">
+            <summary>
+            搜索 匹配到的缓存
+            </summary>
+            <param name="pattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.MemoryCacheHelper.GetCacheKeys">
+            <summary>
+            获取所有缓存键
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Library.Mp3FileHelper">
+            <summary>
+            MP3文件帮助类
+            </summary>
+        </member>
+        <member name="F:YamMusicPlayerWebApi.Library.Mp3FileHelper.info">
+            <summary>
+            MP3文件信息
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Library.Mp3FileHelper.Mp3Info">
+            <summary>
+            返回获取的MP3信息
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.Mp3FileHelper.#ctor(System.String)">
+            <summary>
+            构造函数,输入文件名即得到信息
+            </summary>
+            <param name="mp3FilePos"></param>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.Mp3FileHelper.GetOriginalName">
+            <summary>
+            获取整理后的Mp3文件名,这里以标题和艺术家名定文件名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.Mp3FileHelper.formatString(System.String)">
+            <summary>
+            去除\0字符
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.Mp3FileHelper.getLast128(System.String)">
+            <summary>
+            获取MP3文件最后128个字节
+            </summary>
+            <param name="FileName">文件名</param>
+            <returns>返回字节数组</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.Mp3FileHelper.getMp3Info(System.Byte[])">
+            <summary>
+            获取MP3歌曲的相关信息
+            </summary>
+            <param name = "Info">从MP3文件中截取的二进制信息</param>
+            <returns>返回一个Mp3Info结构</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.Mp3FileHelper.byteToString(System.Byte[])">
+            <summary>
+            将字节数组转换成字符串
+            </summary>
+            <param name = "b">字节数组</param>
+            <returns>返回转换后的字符串</returns>
+        </member>
+        <member name="F:YamMusicPlayerWebApi.Library.Mp3FileNewHelper.info">
+            <summary>
+            MP3文件信息
+            </summary>
+        </member>
+        <member name="F:YamMusicPlayerWebApi.Library.Mp3FileNewHelper.SnowId">
+            <summary>
+            雪花ID
+            </summary>
+        </member>
+        <member name="F:YamMusicPlayerWebApi.Library.Mp3FileNewHelper._mp3FilePath">
+            <summary>
+            MP3文件路径
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Library.Mp3FileNewHelper.Mp3Info">
+            <summary>
+            返回获取的MP3信息
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.Mp3FileNewHelper.GetShell32NameSpaceFolder(System.Object)">
+            <summary>
+            获取Shell32的命名空间文件夹
+            </summary>
+            <param name="folder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.Mp3FileNewHelper.SaveMp3TagImage(System.String,System.Int64)">
+            <summary>
+            获取MP3封面
+            </summary>
+            <param name="mp3FilePath">MP3文件路径</param>
+            <param name="FileId">文件编号</param>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.Mp3FileNewHelper.GetLyricInfo(System.String)">
+            <summary>
+            获取MP3歌词信息
+            </summary>
+            <param name="mp3FilePath"></param>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.Mp3FileNewHelper.#ctor(System.String)">
+            <summary>
+            获取MP3文件的信息
+            </summary>
+            <param name="mp3FilePath">mp3文件路径</param>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.Mp3FileNewHelper.AnalyseMp3File">
+            <summary>
+            mp3文件分析
+            </summary>
+            <param name="MP3FilePath">文件绝对路径</param>
+            <returns>MP3数据库数据</returns>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Library.PublicFunction">
+            <summary>
+            公共方法
+            </summary>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.PublicFunction.GetRequestHost(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            获得请求的Host
+            </summary>
+            <param name="Request">请求对象</param>
+            <returns>请求的host地址</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.PublicFunction.ConvertCover(System.String)">
+            <summary>
+            封面地址转换
+            </summary>
+            <param name="cover">原始封面</param>
+            <returns>转换后的封面</returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.PublicFunction.SaveUploadFile(System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile},System.String,System.String,System.String)">
+            <summary>
+            保存上传文件
+            </summary>
+            <param name="formFiles">上传文件</param>
+            <param name="UploadPath">上传路径</param>
+            <param name="limitFileType">上传文件类型限制</param>
+            <param name="message">错误消息</param>
+            <param name="FileName">指定文件名[不带扩展名]</param>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.PublicFunction.UpadteAlbumSongData">
+            <summary>
+            更新专辑歌曲数量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YamMusicPlayerWebApi.Library.PublicFunction.ConvertApiResult(DataAccess.Model.songinfo,Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            转换Api参数
+            </summary>
+            <param name="source">原始参数</param>
+            <param name="Request">请求对象</param>
+            <returns>返回值</returns>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.RegistArgument">
+            <summary>
+            注册参数
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.RegistArgument.userId">
+             <summary>
+            用户编号
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.RegistArgument.userName">
+             <summary>
+            用户名
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.RegistArgument.passWord">
+             <summary>
+            密码
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.RegistArgument.rePassWord">
+            <summary>
+            重复密码
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.RegistArgument.email">
+             <summary>
+            电子邮件
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.RegistArgument.weChart">
+             <summary>
+            微信号
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.RegistArgument.checkCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.CheckLoginArgument">
+            <summary>
+            检查登陆状态参数
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.CheckLoginArgument.userId">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.CheckLoginArgument.userName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.CheckLoginArgument.token">
+            <summary>
+            token
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.PageingArgument">
+            <summary>
+            分页参数
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PageingArgument.SqlWhere">
+            <summary>
+            查询条件
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PageingArgument.SortField">
+            <summary>
+            排序字段
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PageingArgument.SortMethod">
+            <summary>
+            排序方法[ASC|DESC]
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PageingArgument.PageSize">
+            <summary>
+            每页记录数
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PageingArgument.CurPage">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.LeaveCommentArgument">
+            <summary>
+            发表评论参数
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.LeaveCommentArgument.songId">
+            <summary>
+            歌曲编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.LeaveCommentArgument.userId">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.LeaveCommentArgument.content">
+            <summary>
+            评论内容
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.ChangeUserFaceArgument">
+            <summary>
+            切换用户头像
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.ChangeUserFaceArgument.userId">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.ChangeUserFaceArgument.userFaceUrl">
+            <summary>
+            用户头像URL
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.EditPasswordArgument">
+            <summary>
+            编辑密码参数
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.EditPasswordArgument.UserId">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.EditPasswordArgument.SourcePassword">
+            <summary>
+            原密码
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.EditPasswordArgument.NewPassword">
+            <summary>
+            新密码
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.EditPasswordArgument.RepartPassword">
+            <summary>
+            重复密码
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.EditSignatureArgument">
+            <summary>
+            编辑签名参数
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.EditSignatureArgument.UserId">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.EditSignatureArgument.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.EditSignatureArgument.Signature">
+            <summary>
+            签名
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.AddFriendArgument">
+            <summary>
+            添加好友参数
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.AddFriendArgument.UserId">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.AddFriendArgument.FriendId">
+            <summary>
+            好友编号
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.AddSharingHistoryArgument">
+            <summary>
+            添加分享历史参数
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.AddSharingHistoryArgument.songId">
+             <summary>
+            歌曲编号
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.AddSharingHistoryArgument.shareTarget">
+             <summary>
+            分享目标用户编号
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.AddSharingHistoryArgument.shareUser">
+             <summary>
+            分享用户编号
+             </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.FocusImageResult">
+            <summary>
+            焦点图返回值
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.FocusImageResult.FocusImageID">
+            <summary>
+            焦点图编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.FocusImageResult.FocusImageName">
+            <summary>
+            焦点图名称
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.FocusImageResult.FocusImageURL">
+            <summary>
+            焦点图地址
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.FocusImageResult.FocusImageData">
+            <summary>
+            焦点图数据
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.albuminfoResult">
+            <summary>
+            专辑信息 
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.albumId">
+             <summary>
+            专辑编号
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.albumName">
+             <summary>
+            专辑名称
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.albumAuthor">
+             <summary>
+            专辑作者
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.albumIntro">
+             <summary>
+            专辑简介
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.albumCover">
+             <summary>
+            专辑封面
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.viewCount">
+             <summary>
+            浏览次数
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.shareCount">
+             <summary>
+            分享次数
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.userid">
+             <summary>
+            创建人
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.userName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.userFace">
+            <summary>
+            用户头像
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.RegistedTime">
+            <summary>
+            注册时间
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.Signature">
+            <summary>
+            签名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.createdatetime">
+             <summary>
+            创建时间
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.modifierId">
+             <summary>
+            修改人
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.modifieddatetime">
+             <summary>
+            修改时间
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.albuminfoResult.songLength">
+             <summary>
+            歌曲数量
+             </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.songinfoResult">
+            <summary>
+            歌曲信息 
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.songId">
+             <summary>
+            歌曲编号
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.albumId">
+             <summary>
+            专辑编号
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.Album">
+            <summary>
+            专辑信息
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.title">
+             <summary>
+            歌曲名称
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.cover">
+             <summary>
+            专辑封面
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.fileName">
+             <summary>
+            文件名
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.fileType">
+             <summary>
+            文件类型
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.fileSize">
+             <summary>
+            文件大小
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.duration">
+             <summary>
+            歌曲时长
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.artist">
+             <summary>
+            歌手名
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.year">
+             <summary>
+            年份
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.comment">
+             <summary>
+            注释
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.reserved1">
+             <summary>
+            保留位1
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.reserved2">
+             <summary>
+            保留位2
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.reserved3">
+             <summary>
+            保留位3
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.userid">
+             <summary>
+            创建人
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.createdatetime">
+             <summary>
+            创建时间
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.modifierId">
+             <summary>
+            修改人
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.songinfoResult.modifieddatetime">
+             <summary>
+            修改时间
+             </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.vwSongCommentResult">
+            <summary>
+            歌曲评论
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSongCommentResult.CommentId">
+            <summary>
+            评论编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSongCommentResult.SongId">
+            <summary>
+            歌曲编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSongCommentResult.Publisher">
+            <summary>
+            发布者
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSongCommentResult.Content">
+            <summary>
+            评论内容
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSongCommentResult.Createddatetime">
+            <summary>
+            发布时间
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSongCommentResult.Backup01">
+            <summary>
+            备用字段01
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSongCommentResult.Backup02">
+            <summary>
+            备用字段02
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSongCommentResult.Backup03">
+            <summary>
+            备用字段03
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSongCommentResult.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSongCommentResult.Userface">
+            <summary>
+            用户头像
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSongCommentResult.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.vwRecentlyListened">
+            <summary>
+            常听歌曲记录
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.RecordID">
+            <summary>
+            主键编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.UserID">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.SongId">
+            <summary>
+            歌曲编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.AlbumId">
+            <summary>
+            专辑编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.CreatedDataTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.Userface">
+            <summary>
+            用户头像
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.Title">
+            <summary>
+            歌曲名称
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.Cover">
+            <summary>
+            专辑封面
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.Artist">
+            <summary>
+            歌手名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.Duration">
+            <summary>
+            歌曲时长
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.Year">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.Comment">
+            <summary>
+            注释
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.FileType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.AlbumName">
+            <summary>
+            专辑名称
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.AlbumAuthor">
+            <summary>
+            专辑作者
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.AlbumIntro">
+            <summary>
+            专辑简介
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.AlbumCover">
+            <summary>
+            专辑封面
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.ViewCount">
+            <summary>
+            浏览次数
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.ShareCount">
+            <summary>
+            分享次数
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwRecentlyListened.SongLength">
+            <summary>
+            歌曲数量
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.vwSharingHistory">
+            <summary>
+            分享历史
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.RecordId">
+            <summary>
+            记录编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.SongId">
+            <summary>
+            歌曲编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.ShareTarget">
+            <summary>
+            分享目标用户编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.ShareUser">
+            <summary>
+            分享用户编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.CreatedDataTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.Backup01">
+            <summary>
+            备用字段01
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.Backup02">
+            <summary>
+            备用字段02
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.Backup03">
+            <summary>
+            备用字段03
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.Title">
+            <summary>
+            歌曲名称
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.Cover">
+            <summary>
+            专辑封面
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.FileType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.FileSize">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.Duration">
+            <summary>
+            歌曲时长
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.Artist">
+            <summary>
+            歌手名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.Year">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.Comment">
+            <summary>
+            注释
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.Reserved3">
+            <summary>
+            保留位3
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.Reserved2">
+            <summary>
+            保留位2
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.Reserved1">
+            <summary>
+            保留位1
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.ShareTargetUserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.ShareTargetUserFace">
+            <summary>
+            用户头像
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.ShareUserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.ShareUserFace">
+            <summary>
+            用户头像
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwSharingHistory.IsFriend">
+            <summary>
+            是否好友
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.vwFriends">
+            <summary>
+            好友用户编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.RecordId">
+            <summary>
+            记录编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.UserId">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.FriendUserId">
+            <summary>
+            好友用户编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.SongId">
+            <summary>
+            歌曲编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.Createddatetime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.Backup01">
+            <summary>
+            备用字段01
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.Backup02">
+            <summary>
+            备用字段02
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.Backup03">
+            <summary>
+            备用字段03
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.Title">
+            <summary>
+            歌曲名称
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.Cover">
+            <summary>
+            专辑封面
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.Artist">
+            <summary>
+            歌手名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.Year">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.Comment">
+            <summary>
+            注释
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.Userface">
+            <summary>
+            用户头像
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.FriendUserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.FriendUserFace">
+            <summary>
+            用户头像
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.FriendSignature">
+            <summary>
+            签名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.vwFriends.FriendRegistrationTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.userInfoResult">
+            <summary>
+            用户信息返回值
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.userInfoResult.userid">
+             <summary>
+            用户编号
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.userInfoResult.username">
+             <summary>
+            用户名
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.userInfoResult.email">
+             <summary>
+            电子邮件
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.userInfoResult.wechart">
+             <summary>
+            微信号
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.userInfoResult.signature">
+             <summary>
+            签名
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.userInfoResult.createdatetime">
+             <summary>
+            创建时间
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.userInfoResult.modifieddatetime">
+             <summary>
+            修改时间
+             </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.userInfoResult.userface">
+             <summary>
+            用户头像
+             </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.contentTypeModel">
+            <summary>
+            文件类型大全
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.contentTypeModel.type">
+            <summary>
+            文件的扩展名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.contentTypeModel.contentType">
+            <summary>
+            类型字符串
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.LoginResult">
+            <summary>
+            登陆返回值
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.LoginResult.userId">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.LoginResult.UserFace">
+            <summary>
+            用户头像
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.LoginResult.token">
+            <summary>
+            token
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.Mp3Info">
+            <summary>
+            MP3文件信息类
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Mp3Info.identify">
+            <summary>
+            TAG，三个字节
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Mp3Info.FileId">
+            <summary>
+            文件编号
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Mp3Info.FileName">
+            <summary>
+            MP3文件名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Mp3Info.FileSize">
+            <summary>
+            MP3文件大小
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Mp3Info.Cover">
+            <summary>
+            封面 
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Mp3Info.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Mp3Info.Title">
+            <summary>
+            //歌曲名,30个字节
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Mp3Info.duration">
+            <summary>
+            播放时长
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Mp3Info.Artist">
+            <summary>
+            歌手名,30个字节
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Mp3Info.Album">
+            <summary>
+            所属唱片,30个字节
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Mp3Info.Year">
+            <summary>
+            年,4个字符
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Mp3Info.Comment">
+            <summary>
+            注释,28个字节
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Mp3Info.reserved1">
+            <summary>
+            保留位，一个字节
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Mp3Info.reserved2">
+            <summary>
+            保留位，一个字节
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Mp3Info.reserved3">
+            <summary>
+            保留位，一个字节
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.PlayData">
+            <summary>
+            播放页数据
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PlayData.songinfo">
+            <summary>
+            歌曲信息
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PlayData.creater">
+            <summary>
+            创建者信息
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PlayData.albuminfo">
+            <summary>
+            专辑信息
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PlayData.albumSongList">
+            <summary>
+            专辑歌曲列表
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.QRCodeContnent">
+            <summary>
+            二维码内容
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.QRCodeContnent.Action">
+            <summary>
+            二维码动作字符串
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.QRCodeContnent.Value">
+            <summary>
+            二维码的值
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.Result">
+            <summary>
+            普通添加修改返回值
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Result.Status">
+            <summary>
+            状态（0正确，非0错误）
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.Result.Msg">
+            <summary>
+            错误提示信息
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.ReturnDataMessage">
+            <summary>
+            返回带数据的返回值
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.ReturnDataMessage.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.ReturnDataMessage.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.ReturnDataMessage.Data">
+            <summary>
+            返回数据
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.ResultFile">
+            <summary>
+            返回文件结果
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.ResultFile.SourceFileName">
+            <summary>
+            原始文件名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.ResultFile.NewFileName">
+            <summary>
+            新文件名
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.ResultFile.NewFilePath">
+            <summary>
+            新文件路径
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.ResultFile.AbsolutePath">
+            <summary>
+            绝对路径
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.EntityResult`1">
+            <summary>
+            带数据返回
+            </summary>
+            <typeparam name="T">返回数据类型</typeparam>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.EntityResult`1.Status">
+            <summary>
+            状态（0正确，非0错误）
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.EntityResult`1.Msg">
+            <summary>
+            错误提示信息
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.EntityResult`1.Result">
+            <summary>
+            返回数据
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.ArrayResult`1">
+            <summary>
+            返回数组
+            </summary>
+            <typeparam name="T">要返回的数组类型</typeparam>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.ArrayResult`1.Status">
+            <summary>
+            状态（0正确，非0错误）
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.ArrayResult`1.Msg">
+            <summary>
+            错误提示信息
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.ArrayResult`1.Result">
+            <summary>
+            返回的数组
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.ListResult`1">
+            <summary>
+            List返回值
+            </summary>
+            <typeparam name="T">返回的数据类型</typeparam>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.ListResult`1.Status">
+            <summary>
+            状态（0正确，非0错误）
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.ListResult`1.Msg">
+            <summary>
+            错误提示信息
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.ListResult`1.Result">
+            <summary>
+            返回的List
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.PageResult`1">
+            <summary>
+            分页返回值
+            </summary>
+            <typeparam name="T">返回的数据类型</typeparam>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PageResult`1.Status">
+            <summary>
+            状态（0正确，非0错误）
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PageResult`1.Msg">
+            <summary>
+            错误提示信息
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PageResult`1.PageCount">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PageResult`1.RecordCount">
+            <summary>
+            总记录数
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PageResult`1.Result">
+            <summary>
+            分页的每页数据
+            </summary>
+        </member>
+        <member name="T:YamMusicPlayerWebApi.Model.PageResultNew`1">
+            <summary>
+            分页返回值
+            </summary>
+            <typeparam name="T">返回数据类型</typeparam>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PageResultNew`1.Status">
+            <summary>
+            状态（0正确，非0错误）
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PageResultNew`1.Msg">
+            <summary>
+            错误提示信息
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PageResultNew`1.PageCount">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PageResultNew`1.RecordCount">
+            <summary>
+            总记录数
+            </summary>
+        </member>
+        <member name="P:YamMusicPlayerWebApi.Model.PageResultNew`1.Result">
+            <summary>
+            分页的每页数据
+            </summary>
+        </member>
+    </members>
+</doc>
